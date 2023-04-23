@@ -1,29 +1,32 @@
-# (Application Name)
+# Currency Exchanger
 
-#### (Brief Description of Application)
+#### Convert your USD to any currency! 
 
-#### By (Your Name Here)
+#### By Kymani Stephens 
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* HTML
+* CSS
+* Javascript
+* Webpack
+* Tailwind CSS
 
 ## Description
 
+This application takes an amount (In U.S. dollars) and converts it into the equivalent amount in the currency of your choosing.
+
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+ 
+* Install all packages with $ npm install
+
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* No current bugs
 
 ## License
+[MIT](https://opensource.org/license/mit/)
+
+Copyright (c) 2023 Kymani Stephens
