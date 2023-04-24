@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <title>Currency Exchange</title>
-</head>
-<body>
-
-  <!--FORM TO GRAB USD DOLLAR AMOUNT FROM USER-->
+  <head>
+    <title>Currency Exchange</title>
+  </head>
+  <body>
+    <!--FORM TO GRAB USD DOLLAR AMOUNT FROM USER-->
     <form id="form">
-      <label for="usd-amt">Enter USD:</label>
-      <input id="usd-amt" type="number">
-      <button type="submit">Exchange!</button> 
+
+      <!--INPUT USD AMOUNT-->
+      <label for="usd-amt">Enter USD:</label> 
+      <input id="usd-amt" type="number"/>
+
+      <br>
+      <br>
+
+      <!--CHOOSE CURRENCY TO EXCHANGE TO-->
+
+      <label for="exchange-currency">Exchange Currency</label>
+      <select id="exchange-currency" name="exchange-currency">
+      <option disabled="disabled" selected="selected" value="placeholder">Choose a Currency!</option>
+      </select>
+
+      <button type="submit">Exchange!</button>
     </form>
 
-  <!--DIV BELOW WILL OUTPUT EXCHANGE RESULTS OR ERRORS-->  
-    <div id="output-msg"></div> 
+    <!--DIV BELOW WILL OUTPUT EXCHANGE RESULTS OR ERRORS-->
+    <div id="output-msg"></div>
     <div id="error-msg"></div>
-
-
-</body>
+  </body>
 </html>
