@@ -1,14 +1,19 @@
 // FUNCTION WILL POPULATE DROPDOWN MENU WITH POSSIBLE CURRENCY SELECTIONS
-function populateDropdown() {
-  const dropItem = document.createElement('option');
-  dropItem.setAttribute('')
+function populateDropdown(response) {
+
+  console.log(response) 
+
+  // const menu = document.getElementById('exchange-currency') 
+
+  // for (let i = 0; i < Object.keys(response.conversion_rates.length); i++ ) {
+
+  //   const dropItem = document.createElement('option');
+  //   menu.appendChild(dropItem);
+
+  // }
+
 }
 
-// FUNCTION WILL PRINT ERROR RESPONSE TO ERROR-MSG DIV
-function printError() {
-  document.getElementById("error-msg").innerText =
-    "uh oh, something went wrong :(";
-}
 
 // GETS USER INPUTTED USD AMOUNT
 function handleSubmit(event) {
@@ -28,14 +33,7 @@ window.addEventListener("load", function () {
   this.fetch(
     `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`
   )
-    .then(function (response) {
-      if (response.ok) {
-        populateDropdown(response.json());
-      } else {
-        printError(); 
-      }
+    .then(function(response) {
+      return response.json();
     })
-    .then(function (data) {
-      return data;
-    });
 });
