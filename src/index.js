@@ -28,11 +28,16 @@ function populateDropdown() {
   });
 }
 
+function exchangeMath(usdAmount, exchangeVal) {
+  return usdAmount * exchangeVal
+} 
+
+
 // GETS USER INPUTTED USD AMOUNT
 function handleSubmit(event) {
   event.preventDefault();
   const usdAmount = document.getElementById("usd-amt").value;
-  usdAmount;
+   
 }
 
 // WHEN PAGE LOADS, CALLBACK WILL GRAB FORM ADDING EVENT LISTENER FOR handleSubmit
