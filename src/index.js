@@ -1,7 +1,13 @@
+// FUNCTION WILL POPULATE DROPDOWN MENU WITH POSSIBLE CURRENCY SELECTIONS
+function populateDropdown() {
+  const dropItem = document.createElement('option');
+  dropItem.setAttribute('')
+}
+
 // FUNCTION WILL PRINT ERROR RESPONSE TO ERROR-MSG DIV
 function printError() {
   document.getElementById("error-msg").innerText =
-    "uh oh, something went wrong :("; 
+    "uh oh, something went wrong :(";
 }
 
 // GETS USER INPUTTED USD AMOUNT
@@ -19,14 +25,14 @@ window.addEventListener("load", function () {
 /* I'm thinking make an API call immediately when the page loads
    so I have data to populate my dropdown menu with!!!! */
 window.addEventListener("load", function () {
-  this.fetch( 
+  this.fetch(
     `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`
   )
     .then(function (response) {
       if (response.ok) {
-        return response.json();
+        populateDropdown(response.json());
       } else {
-        printError();
+        printError(); 
       }
     })
     .then(function (data) {
