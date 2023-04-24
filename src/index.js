@@ -1,18 +1,16 @@
-
-
-
-
-
-
-
-
- 
 // GETS USER INPUTTED USD AMOUNT
 function handleSubmit(event) {
   event.preventDefault();
   const usdAmount = document.getElementById("usd-amt").value;
-  console.log(usdAmount) 
 }
+
+/* I'm thinking make an API call immediately when the page loads
+   so I have data to populate my dropdown menu with!!!! */
+window.addEventListener("load", function () {
+  this.fetch( 
+    `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`
+  ).then(function(response) {console.log(response)});
+});
 
 // WHEN PAGE LOADS, CALLBACK WILL GRAB FORM ADDING EVENT LISTENER FOR handleSubmit
 window.addEventListener("load", function () {
