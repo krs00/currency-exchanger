@@ -1,4 +1,4 @@
-import Exchange from "./js/exchange";
+import {Exchange} from "./js/exchange";
 
 // THIS FUNCTION WILL POPULATE THE DROP DOWN MENU WITH CURRENCY CODES
 // THE VALUE OF EACH ELEMENT WILL BE EXCHANGE RATE
@@ -27,6 +27,15 @@ function populateDropdown() {
   });
 }
 
+// PRINT ERRORS
+export function printError() {
+  const errorOutput = document.getElementById('error-msg') 
+  errorOutput.innerText = 'Something went wrong!'
+}
+
+
+
+// DOES MATH FOR CURRENCY EXCHANGE
 function exchangeMath(num1, num2) {
   return Math.round(num1 * num2);
 }

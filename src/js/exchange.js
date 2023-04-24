@@ -1,3 +1,5 @@
+import { printError } from "../index.js";
+
 /* I'm trying to get into the habit of commenting out all my code
     just so I'm sure what each line does 
 
@@ -6,7 +8,7 @@
     It's good to make classes for API request because it helps keep your code reusable and clean.
     I didn't do that at the start but TIL thats why I had to restructure my project :/ */
 
-export default class Exchange {
+export class Exchange {
   // DEFINE STATIC METHOD FOR EXCHANGE CLASS
   // THIS METHOD WILL CALL API AND RETURN PROMISE
   static getExchange() {
@@ -36,6 +38,7 @@ export default class Exchange {
           }
         }) // This code is simple just returns error object, it will be used for further error handling
         .catch(function (error) {
+          printError(); 
           return error;
         })
     );
