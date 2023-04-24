@@ -4,32 +4,33 @@
     <title>Currency Exchanger</title>
   </head>
   <body>
-
     <!--IM LEARNING HOW TO COMMENT MY CODE BECAUSE I LIKE TO GO BACK AND READ STUFF-->
     <!--IM LEARNING HOW TO COMMENT MY CODE BECAUSE I LIKE TO GO BACK AND READ STUFF-->
-    <!--IM LEARNING HOW TO COMMENT MY CODE BECAUSE I LIKE TO GO BACK AND READ STUFF--> 
+    <!--IM LEARNING HOW TO COMMENT MY CODE BECAUSE I LIKE TO GO BACK AND READ STUFF-->
 
     <h1>Currency Exchanger!💰💵</h1>
 
     <!--FORM TO GRAB USD DOLLAR AMOUNT FROM USER-->
     <form id="form">
-
       <!--INPUT USD AMOUNT-->
-      <label for="usd-amt">Enter USD:</label> 
-      <input id="usd-amt" type="number" min="1"> 
+      <label for="usd-amt">Enter USD:</label>
+      <input id="usd-amt" type="number" min="1" max="99999" />
 
-      <br>
-      <br>
+      <br />
+      <br />
 
       <!--CHOOSE CURRENCY TO EXCHANGE TO-->
 
+      <!--I WANT TO HAVE THIS AUTOPOPULATE WITH DATA FROM API CALL-->
       <label for="exchange-currency">Exchange Currency</label>
       <select id="exchange-currency" name="exchange-currency">
-      <option disabled="disabled" selected="selected" value="">Choose a Currency!</option>
+        <option disabled="disabled" selected="selected" value="">
+          Choose a Currency!
+        </option>
       </select>
 
-      <br>
-      <br>
+      <br />
+      <br />
 
       <!--BUTTON SUBMITS CURRENCY EXCHANGE INFO-->
 
