@@ -1,9 +1,9 @@
 import Exchange from "./js/exchange";
 
 // THIS FUNCTION WILL POPULATE THE DROP DOWN MENU WITH CURRENCY CODES
-// THE VALUE OF EACH ELEMENT WILL BE EXCHANGE RATE 
+// THE VALUE OF EACH ELEMENT WILL BE EXCHANGE RATE
 function populateDropdown() {
-  // GET API DATA 
+  // GET API DATA
   let promise = Exchange.getExchange();
   promise.then(function (response) {
     // ACCESS OBJECT WITH CONVERSION RATES AND CURRENCY CODES
@@ -24,20 +24,32 @@ function populateDropdown() {
 
       selectBox.appendChild(selectOption); // OPTION ELEMENT IS APPENDED TO DROPDOWN MENU
     });
-
   });
 }
 
-function exchangeMath(usdAmount, exchangeVal) {
-  return usdAmount * exchangeVal
-} 
-
+function exchangeMath(num1, num2) {
+  return Math.round(num1 * num2);
+}
 
 // GETS USER INPUTTED USD AMOUNT
 function handleSubmit(event) {
   event.preventDefault();
+  // DOLLAR AMOUNT YOU INPUTTED
   const usdAmount = document.getElementById("usd-amt").value;
-   
+  // CURRENCY EXCHANGE VALUE/RATE
+  const exchangeSelect = document.getElementById("exchange-currency")
+  const exchangeValue = exchangeSelect.value;
+  const exchangeText = exchangeSelect.options[exchangeSelect.selectedIndex].text;
+  // DIV FOR RESULTS OUTPUT
+  const outputDiv = document.getElementById("output-msg");
+
+  
+
+  outputDiv.innerText = null;
+  outputDiv.innerText = `Your ${usdAmount} USD is equivalent to ${exchangeMath(
+    usdAmount,
+    exchangeValue
+  )} ${exchangeText}`;
 }
 
 // WHEN PAGE LOADS, CALLBACK WILL GRAB FORM ADDING EVENT LISTENER FOR handleSubmit
@@ -47,4 +59,4 @@ window.addEventListener("load", function () {
 
 /* I'm thinking make an API call immediately when the page loads
    so I have data to populate my dropdown menu with!!!! */
-window.addEventListener("load", populateDropdown) 
+window.addEventListener("load", populateDropdown);

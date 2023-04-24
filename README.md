@@ -10,7 +10,6 @@
 * CSS
 * Javascript
 * Webpack
-* Tailwind CSS
 
 ## Description
 
